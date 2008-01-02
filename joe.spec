@@ -12,6 +12,7 @@ Patch1:		joe-3.5-term.patch
 Patch2:		joe-3.5-spec-ftyperc.patch
 Url:		http://joe-editor.sourceforge.net/
 BuildRequires:	ncurses-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description 
 Joe is an easy to use, modeless text editor which would be very
