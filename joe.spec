@@ -54,19 +54,6 @@ done
 
 cp -p %{SOURCE1} %{buildroot}%{_sysconfdir}/joe/syntax/
 
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):\
-	needs="text"\
-	section="More Applications/Editors"\
-	title="Joe"\
-	longtitle="Joe - a text ANSI editor"\
-	command="%{_bindir}/joe"\
-%if %{mdkversion} >= 200610
-	xdg="true" \
-%endif
-	icon="editors_section.png"
-EOF
 
 %if %{mdkversion} >= 200610
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
@@ -104,7 +91,6 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %{_sysconfdir}/joe/*
 %{_mandir}/man1/*
 %lang(ru) %{_mandir}/ru/man1/*
-%{_menudir}/%{name}
 %if %{mdkversion} >= 200610
 %{_datadir}/applications/*
 %endif
