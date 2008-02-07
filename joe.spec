@@ -2,8 +2,8 @@
 Summary:	%Summary
 Name:		joe
 Version:	3.5
-Release:	%mkrel 5
-License:	GPL
+Release:	%mkrel 6
+License:	GPLv2+
 Group:		Editors
 Source:		http://puzzle.dl.sourceforge.net/sourceforge/joe-editor/%{name}-%{version}.tar.bz2
 # RPM SPEC mode, originally from Suse's joe
@@ -97,5 +97,3 @@ rm -rf $RPM_BUILD_ROOT
 # joe's build puts docs here(!), and leaves out some interesting files...
 %exclude %{_sysconfdir}/joe/doc
 %doc ChangeLog HACKING HINTS LIST NEWS README TODO docs/help-system.html
-
-
