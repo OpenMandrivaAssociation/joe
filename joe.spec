@@ -2,8 +2,8 @@
 Summary:	%Summary
 Name:		joe
 Version:	3.5
-Release:	%mkrel 6
-License:	GPLv2+
+Release:	%mkrel 7
+License:	GPLv1+
 Group:		Editors
 Source:		http://puzzle.dl.sourceforge.net/sourceforge/joe-editor/%{name}-%{version}.tar.bz2
 # RPM SPEC mode, originally from Suse's joe
