@@ -1,20 +1,22 @@
+%define Werror_cflags %nil
+
 %define		Summary An easy to use text editor, supporting syntax highlight and UTF-8
 Summary:	%Summary
 Name:		joe
-Version:	3.5
-Release:	%mkrel 8
+Version:	3.7
+Release:	%mkrel 1
 License:	GPL+
 Group:		Editors
 Source:		http://puzzle.dl.sourceforge.net/sourceforge/joe-editor/%{name}-%{version}.tar.bz2
 # RPM SPEC mode, originally from Suse's joe
 Source1:	spec.jsf
-Patch1:		joe-3.5-term.patch
+Patch1:		joe-3.7-term.patch
 Patch2:		joe-3.5-spec-ftyperc.patch
 Url:		http://joe-editor.sourceforge.net/
 BuildRequires:	ncurses-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 
-%description 
+%description
 Joe is an easy to use, modeless text editor which would be very
 appropriate for novices.  Joe uses the same WordStar keybindings used
 in Borland's development environment.
@@ -26,7 +28,7 @@ probably install joe because it is very easy to use.
 
 %prep
 %setup -q
-%patch1 -p1 -b .gnoterm
+%patch1 -p0 -b .gnoterm
 %patch2 -p1 -b .spec-ftyperc
 
 %build
@@ -52,7 +54,7 @@ for dir in %{buildroot}/%{_mandir} %{buildroot}/%{_mandir}/ru; do
   popd
 done
 
-cp -p %{SOURCE1} %{buildroot}%{_sysconfdir}/joe/syntax/
+cp -p %{SOURCE1} %{buildroot}%{_datadir}/joe/syntax/
 
 
 %if %{mdkversion} >= 200610
@@ -95,13 +97,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr (-,root,root)
 %{_bindir}/*
-%dir %{_sysconfdir}/joe 
+%dir %{_sysconfdir}/joe
 %config(noreplace) %{_sysconfdir}/joe/*
+%{_datadir}/%{name}/*
 %{_mandir}/man1/*
 %lang(ru) %{_mandir}/ru/man1/*
 %if %{mdkversion} >= 200610
 %{_datadir}/applications/*
 %endif
-# joe's build puts docs here(!), and leaves out some interesting files...
-%exclude %{_sysconfdir}/joe/doc
 %doc ChangeLog HACKING HINTS LIST NEWS README TODO docs/help-system.html
