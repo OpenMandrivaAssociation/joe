@@ -4,7 +4,7 @@
 Summary:	%Summary
 Name:		joe
 Version:	3.7
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPL+
 Group:		Editors
 Source:		http://puzzle.dl.sourceforge.net/sourceforge/joe-editor/%{name}-%{version}.tar.bz2
