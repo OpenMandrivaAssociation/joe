@@ -4,7 +4,7 @@
 Summary:	%Summary
 Name:		joe
 Version:	3.7
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	GPL+
 Group:		Editors
 Source:		http://puzzle.dl.sourceforge.net/sourceforge/joe-editor/%{name}-%{version}.tar.bz2
@@ -12,6 +12,7 @@ Source:		http://puzzle.dl.sourceforge.net/sourceforge/joe-editor/%{name}-%{versi
 Source1:	spec.jsf
 Patch1:		joe-3.7-term.patch
 Patch2:		joe-3.5-spec-ftyperc.patch
+Patch3:		joe-3.7-segfault-fix.patch
 Url:		http://joe-editor.sourceforge.net/
 BuildRequires:	ncurses-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
@@ -30,6 +31,7 @@ probably install joe because it is very easy to use.
 %setup -q
 %patch1 -p0 -b .gnoterm
 %patch2 -p1 -b .spec-ftyperc
+%patch3 -p0
 
 %build
 export CFLAGS="$RPM_OPT_FLAGS -DUSE_LOCALE"
