@@ -39,7 +39,7 @@ export CFLAGS="$RPM_OPT_FLAGS -DUSE_LOCALE"
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall
 
 # XXX: hack to install the manpages, otherwise one goes over the other ...
@@ -60,8 +60,8 @@ cp -p %{SOURCE1} %{buildroot}%{_datadir}/joe/syntax/
 
 
 %if %{mdkversion} >= 200610
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
 [Desktop Entry]
 Name=Joe
 Comment=%{Summary}
@@ -94,7 +94,7 @@ EOF
 %endif
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr (-,root,root)
