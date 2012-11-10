@@ -1,0 +1,12 @@
+diff --git a/rc/ftyperc b/rc/ftyperc
+index 360880b..0260777 100644
+--- a/rc/ftyperc
++++ b/rc/ftyperc
+@@ -709,3 +709,7 @@
+ *jpicorc.in
+ -syntax joerc
+ 
++ RPM SPEC file
++*.spec
++-syntax spec
++-pound_comment
