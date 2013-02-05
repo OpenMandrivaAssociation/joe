@@ -4,7 +4,7 @@
 Summary:	%Summary
 Name:		joe
 Version:	3.7
-Release:	%mkrel 6
+Release:	%mkrel 7
 License:	GPL+
 Group:		Editors
 Source:		http://puzzle.dl.sourceforge.net/sourceforge/joe-editor/%{name}-%{version}.tar.bz2
@@ -131,7 +131,7 @@ rm -rf $RPM_BUILD_ROOT
 + Revision: 425465
 - rebuild
 
-* Thu Jan 15 2009 JÃ©rÃ´me Soyer <saispo@mandriva.org> 3.7-1mdv2009.1
+* Thu Jan 15 2009 JÃƒÂ©rÃƒÂ´me Soyer <saispo@mandriva.org> 3.7-1mdv2009.1
 + Revision: 329765
 - New upstream release
 
@@ -182,7 +182,7 @@ rm -rf $RPM_BUILD_ROOT
 * Tue Sep 19 2006 Gwenole Beauchesne <gbeauchesne@mandriva.com> 3.5-2mdv2007.0
 - Rebuild
 
-* Wed Aug 09 2006 Giuseppe Ghibò <ghibo@mandriva.com> 3.5-1mdv2007.0
+* Wed Aug 09 2006 Giuseppe GhibÃ² <ghibo@mandriva.com> 3.5-1mdv2007.0
 - Release: 3.5
 - Rebuilt Patch1.
 - Disable Patch2.
@@ -191,32 +191,32 @@ rm -rf $RPM_BUILD_ROOT
 * Sat Sep 10 2005 Gwenole Beauchesne <gbeauchesne@mandriva.com> 3.3-2mdk
 - menudir
 
-* Mon Jul 11 2005 Giuseppe Ghibò <ghibo@mandriva.com> 3.3-1mdk
+* Mon Jul 11 2005 Giuseppe GhibÃ² <ghibo@mandriva.com> 3.3-1mdk
 - Release: 3.3.
 - Removed old Patch2.
 - Merged Patch2 from RH.
 
-* Sun Oct 10 2004 Giuseppe Ghibò <ghibo@mandrakesoft.com> 3.1-5mdk
+* Sun Oct 10 2004 Giuseppe GhibÃ² <ghibo@mandrakesoft.com> 3.1-5mdk
 - Added Patch2, to fix documentation/mandirs according to new /etc/joe path
   (from RH).
 
-* Sat Oct 09 2004 Giuseppe Ghibò <ghibo@mandrakesoft.com> 3.1-4mdk
+* Sat Oct 09 2004 Giuseppe GhibÃ² <ghibo@mandrakesoft.com> 3.1-4mdk
 - Use /etc/joe and not /etc/joe/joe as config dir (fix bug #12021).
 
 * Tue Aug 17 2004 Laurent MONTEL <lmontel@mandrakesoft.com> 3.1-3mdk
 - Rebuild with new menu.
 
-* Tue Jul 20 2004 Giuseppe Ghibò <ghibo@mandrakesoft.com> 3.1-2mdk
+* Tue Jul 20 2004 Giuseppe GhibÃ² <ghibo@mandrakesoft.com> 3.1-2mdk
 - Rebuilt.
 
-* Tue Jun 01 2004 Giuseppe Ghibò <ghibo@mandrakesoft.com> 3.1-1mdk
+* Tue Jun 01 2004 Giuseppe GhibÃ² <ghibo@mandrakesoft.com> 3.1-1mdk
 - Release 3.1.
 
-* Tue Apr 27 2004 Giuseppe Ghibò <ghibo@mandrakesoft.com> 3.0-1mdk
+* Tue Apr 27 2004 Giuseppe GhibÃ² <ghibo@mandrakesoft.com> 3.0-1mdk
 - Release: 3.1.
 - Removed Patch0.
 
-* Sat Feb 07 2004 Giuseppe Ghibò <ghibo@mandrakesoft.com> 2.9.8-2mdk
+* Sat Feb 07 2004 Giuseppe GhibÃ² <ghibo@mandrakesoft.com> 2.9.8-2mdk
 - Merged gnome term patches from RH (Patch1).
 - Renamed Patch2 -> Patch0.
 
