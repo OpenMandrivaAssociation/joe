@@ -1,21 +1,19 @@
 %define Werror_cflags %nil
 
-%define		Summary An easy to use text editor, supporting syntax highlight and UTF-8
-Summary:	%Summary
+Summary:	Summary An easy to use text editor, supporting syntax highlight and UTF-8
 Name:		joe
 Version:	3.7
-Release:	%mkrel 7
+Release:	8
 License:	GPL+
 Group:		Editors
-Source:		http://puzzle.dl.sourceforge.net/sourceforge/joe-editor/%{name}-%{version}.tar.bz2
+Url:		http://joe-editor.sourceforge.net/
+Source0:	http://puzzle.dl.sourceforge.net/sourceforge/joe-editor/%{name}-%{version}.tar.bz2
 # RPM SPEC mode, originally from Suse's joe
 Source1:	spec.jsf
 Patch1:		joe-3.7-term.patch
 Patch2:		joe-3.5-spec-ftyperc.patch
 Patch3:		joe-3.7-segfault-fix.patch
-Url:		http://joe-editor.sourceforge.net/
-BuildRequires:	ncurses-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
+BuildRequires:	pkgconfig(ncurses)
 
 %description
 Joe is an easy to use, modeless text editor which would be very
@@ -39,7 +37,6 @@ export CFLAGS="$RPM_OPT_FLAGS -DUSE_LOCALE"
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
 %makeinstall
 
 # XXX: hack to install the manpages, otherwise one goes over the other ...
@@ -58,10 +55,8 @@ done
 
 cp -p %{SOURCE1} %{buildroot}%{_datadir}/joe/syntax/
 
-
-%if %{mdkversion} >= 200610
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
 [Desktop Entry]
 Name=Joe
 Comment=%{Summary}
@@ -71,44 +66,16 @@ Terminal=true
 Type=Application
 Categories=X-MandrivaLinux-MoreApplications-Editors;TextEditor;
 EOF
-%endif
-
-%post
-%if %{mdkversion} >= 200610
-%if %mdkversion < 200900
-%update_desktop_database
-%endif
-%endif
-%if %mdkversion < 200900
-%update_menus
-%endif
-
-%postun
-%if %{mdkversion} >= 200610
-%if %mdkversion < 200900
-%clean_desktop_database
-%endif
-%endif
-%if %mdkversion < 200900
-%clean_menus
-%endif
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr (-,root,root)
+%doc ChangeLog HACKING HINTS LIST NEWS README TODO docs/help-system.html
 %{_bindir}/*
 %dir %{_sysconfdir}/joe
 %config(noreplace) %{_sysconfdir}/joe/*
 %{_datadir}/%{name}/*
 %{_mandir}/man1/*
 %lang(ru) %{_mandir}/ru/man1/*
-%if %{mdkversion} >= 200610
 %{_datadir}/applications/*
-%endif
-%doc ChangeLog HACKING HINTS LIST NEWS README TODO docs/help-system.html
-
 
 %changelog
 * Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 3.7-6mdv2011.0
