@@ -3,7 +3,7 @@
 Summary:	Summary An easy to use text editor, supporting syntax highlight and UTF-8
 Name:		joe
 Version:	3.7
-Release:	11
+Release:	12
 License:	GPLv2+
 Group:		Editors
 Url:		http://joe-editor.sourceforge.net/
