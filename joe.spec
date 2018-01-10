@@ -2,17 +2,16 @@
 
 Summary:	Summary An easy to use text editor, supporting syntax highlight and UTF-8
 Name:		joe
-Version:	3.7
-Release:	18
+Version:	4.6
+Release:	1
 License:	GPLv2+
 Group:		Editors
 Url:		http://joe-editor.sourceforge.net/
-Source0:	http://puzzle.dl.sourceforge.net/sourceforge/joe-editor/%{name}-%{version}.tar.bz2
+Source0:	https://downloads.sourceforge.net/project/joe-editor/JOE%20sources/joe-%{version}/joe-%{version}.tar.gz
 # RPM SPEC mode, originally from Suse's joe
 Source1:	spec.jsf
-Patch1:		joe-3.7-term.patch
-Patch2:		joe-3.5-spec-ftyperc.patch
-Patch3:		joe-3.7-segfault-fix.patch
+Patch0:		joe-3.7-term.patch
+Patch1:		joe-3.5-spec-ftyperc.patch
 BuildRequires:	pkgconfig(ncurses)
 
 %description
@@ -27,13 +26,11 @@ probably install joe because it is very easy to use.
 
 %prep
 %setup -q
-%patch1 -p0 -b .gnoterm
-%patch2 -p1 -b .spec-ftyperc
-%patch3 -p0
+%apply_patches
 
 %build
 export CFLAGS="$RPM_OPT_FLAGS -DUSE_LOCALE"
-%configure2_5x
+%configure
 %make
 
 %install
@@ -68,7 +65,7 @@ Categories=X-MandrivaLinux-MoreApplications-Editors;TextEditor;
 EOF
 
 %files
-%doc ChangeLog HACKING HINTS LIST NEWS README TODO docs/help-system.html
+%doc ChangeLog docs/help-system.html
 %{_bindir}/*
 %dir %{_sysconfdir}/joe
 %config(noreplace) %{_sysconfdir}/joe/*
@@ -76,4 +73,3 @@ EOF
 %{_mandir}/man1/*
 %lang(ru) %{_mandir}/ru/man1/*
 %{_datadir}/applications/*
-

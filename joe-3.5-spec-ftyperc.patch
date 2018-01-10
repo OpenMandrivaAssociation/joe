@@ -1,12 +1,10 @@
-diff --git a/rc/ftyperc b/rc/ftyperc
-index 360880b..0260777 100644
---- a/rc/ftyperc
-+++ b/rc/ftyperc
-@@ -709,3 +709,7 @@
- *jpicorc.in
- -syntax joerc
- 
-+ RPM SPEC file
-+*.spec
-+-syntax spec
+--- joe-4.6/rc/ftyperc.spec-ftyperc	2018-01-10 23:18:02.532595110 +0100
++++ joe-4.6/rc/ftyperc	2018-01-10 23:18:36.270762711 +0100
+@@ -911,6 +911,7 @@
+ *.spec
+ -autoindent
+ -syntax spec
 +-pound_comment
+ 
+  Haskell
+ [haskell]
