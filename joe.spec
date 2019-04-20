@@ -73,3 +73,4 @@ EOF
 %{_mandir}/man1/*
 %lang(ru) %{_mandir}/ru/man1/*
 %{_datadir}/applications/*
+%{_datadir}/doc/joe/*
