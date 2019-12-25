@@ -26,7 +26,7 @@ probably install joe because it is very easy to use.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 export CFLAGS="$RPM_OPT_FLAGS -DUSE_LOCALE"
