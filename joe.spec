@@ -35,20 +35,6 @@ export CFLAGS="$RPM_OPT_FLAGS -DUSE_LOCALE"
 %install
 %make_install
 
-# XXX: hack to install the manpages, otherwise one goes over the other ...
-# (trap for when this ugly thing is no more needed)
-[ -d %{buildroot}/%{_mandir}/ru ] && exit 1
-rm -rf %{buildroot}/%{_mandir}
-pushd man && %makeinstall mandir=%{buildroot}/%{_mandir} && popd
-pushd man/ru && %makeinstall mandir=%{buildroot}/%{_mandir}/ru && popd
-for dir in %{buildroot}/%{_mandir} %{buildroot}/%{_mandir}/ru; do
-  pushd $dir/man1
-  for bin in jmacs jpico jstar rjoe; do
-    ln -s joe.1 ${bin}.1
-  done
-  popd
-done
-
 cp -p %{SOURCE1} %{buildroot}%{_datadir}/joe/syntax/
 
 mkdir -p %{buildroot}%{_datadir}/applications
