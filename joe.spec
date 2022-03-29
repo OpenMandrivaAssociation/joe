@@ -3,7 +3,7 @@
 Summary:	Summary An easy to use text editor, supporting syntax highlight and UTF-8
 Name:		joe
 Version:	4.6
-Release:	8
+Release:	9
 License:	GPLv2+
 Group:		Editors
 Url:		http://joe-editor.sourceforge.net/
@@ -25,16 +25,15 @@ have a fondness for WordStar.  If you're just starting out, you should
 probably install joe because it is very easy to use.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
 export CFLAGS="$RPM_OPT_FLAGS -DUSE_LOCALE"
 %configure
-%make
+%make_build
 
 %install
-%makeinstall
+%make_install
 
 # XXX: hack to install the manpages, otherwise one goes over the other ...
 # (trap for when this ugly thing is no more needed)
@@ -65,12 +64,12 @@ Categories=X-MandrivaLinux-MoreApplications-Editors;TextEditor;
 EOF
 
 %files
-%doc ChangeLog docs/help-system.html
+%doc docs/help-system.html
 %{_bindir}/*
 %dir %{_sysconfdir}/joe
 %config(noreplace) %{_sysconfdir}/joe/*
 %{_datadir}/%{name}/*
-%{_mandir}/man1/*
+%doc %{_mandir}/man1/*
 %lang(ru) %{_mandir}/ru/man1/*
 %{_datadir}/applications/*
-%{_datadir}/doc/joe/*
+%doc %{_docdir}/joe/*
