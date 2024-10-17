@@ -6,7 +6,7 @@ Version:	4.6
 Release:	11
 License:	GPLv2+
 Group:		Editors
-Url:		http://joe-editor.sourceforge.net/
+Url:		https://joe-editor.sourceforge.net/
 Source0:	https://downloads.sourceforge.net/project/joe-editor/JOE%20sources/joe-%{version}/joe-%{version}.tar.gz
 # RPM SPEC mode, originally from Suse's joe
 Source1:	spec.jsf
