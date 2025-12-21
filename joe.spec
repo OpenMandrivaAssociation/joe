@@ -12,6 +12,11 @@ Source0:	https://downloads.sourceforge.net/project/joe-editor/JOE%20sources/joe-
 Source1:	spec.jsf
 Patch0:		joe-3.7-term.patch
 Patch1:		joe-3.5-spec-ftyperc.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(ncurses)
 
 %description
