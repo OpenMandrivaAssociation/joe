@@ -2,15 +2,15 @@
 
 Summary:	Summary An easy to use text editor, supporting syntax highlight and UTF-8
 Name:		joe
-Version:	4.6
-Release:	11
+Version:	4.8
+Release:	1
 License:	GPLv2+
 Group:		Editors
 Url:		https://joe-editor.sourceforge.net/
 Source0:	https://downloads.sourceforge.net/project/joe-editor/JOE%20sources/joe-%{version}/joe-%{version}.tar.gz
 # RPM SPEC mode, originally from Suse's joe
 Source1:	spec.jsf
-Patch0:		joe-3.7-term.patch
+# dropped (no longer applies): Patch0:		joe-3.7-term.patch
 Patch1:		joe-3.5-spec-ftyperc.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
